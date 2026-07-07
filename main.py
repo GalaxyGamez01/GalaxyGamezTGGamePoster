@@ -16,8 +16,7 @@ from bs4 import BeautifulSoup
 
 # ---------------- SETTINGS ----------------
 
-BLOG_FEED_URL = "https://galaxygamez01.blogspot.com/feeds/posts/default"
-
+BLOG_FEED_URL = "https://galaxygamez01.blogspot.com/feeds/posts/default?max-results=500"
 CHANNEL_IDS = [
     -1002328517911,  # main channel
     -1001959406158,
@@ -37,8 +36,8 @@ WEBSITE_LINK = "https://galaxygamez01.blogspot.com"
 POSTS_PER_CYCLE = 3
 DELAY_BETWEEN_CHANNELS = 2       # seconds
 DELAY_BETWEEN_POSTS_MIN = 5      # seconds
-DELAY_BETWEEN_POSTS_MAX = 10
-RETRY_ATTEMPTS = 3
+DELAY_BETWEEN_POSTS_MAX = 6
+RETRY_ATTEMPTS = 5
 
 POSTED_FILE = "posted_posts.json"
 STATE_FILE = "state.json"
@@ -131,15 +130,15 @@ def build_caption(entry):
     title = entry.title
     whatsapp_block = "\nAND\n".join(WHATSAPP_LINKS)
     return (
-        f"☠️ GAME NAME:\n\n{title}\n\n"
+        f"☠️ GAME NAME:\n{title}\n\n"
         f"Download:\nLatest Update Highly Compressed HD Graphics\n\n"
         f"📂 Download Link\n{entry.link}\n\n"
         f"🔥 Follow us on WhatsApp\n{whatsapp_block}\n\n"
         f"🔥 Follow us on Telegram\n{TELEGRAM_LINK}\n\n"
         f"🔥 Visit For More Games\n{WEBSITE_LINK}\n\n"
-        f"━━━━━━━━━━━━━━━━━━\n"
+        f"━━━━━━━━━━━━━━━━━\n"
         f"POWERED BY GALAXY GAMEZ™\n"
-        f"━━━━━━━━━━━━━━━━━━"
+        f"━━━━━━━━━━━━━━━━━"
     )
 
 
