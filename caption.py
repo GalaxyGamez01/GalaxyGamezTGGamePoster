@@ -17,7 +17,7 @@ def extract_image(entry):
 def build_caption(entry):
     title = entry.title
     return (
-        f"❏ 𝐆𝐀𝐌𝐄 𝐍𝐀𝐌𝐄: [ {title.upper()} ]\n\n"
+        f"❏ 𝐆𝐀𝐌𝐄 𝐍𝐀𝐌𝐄: {title.upper()}\n\n"
         f"╭➤ 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 👇👇\n"
         f"│ {entry.link}\n"
         f"│\n"

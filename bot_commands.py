@@ -19,7 +19,7 @@ from telegram_api import (
     send_message, get_chat_member, get_chat, get_updates,
     answer_callback, message_still_exists,
 )
-from main_new import get_feed_entries, ensure_default_admin
+from main import get_feed_entries, ensure_default_admin
 
 CREDITS_LINE = f"\n\nCredits: {SUPPORT_HANDLE}"
 
@@ -105,7 +105,7 @@ def is_admin(user_id):
 # ---------------- COMMAND HANDLERS ----------------
 
 def cmd_post(chat_id, user_id, users):
-    from main_new import run_posting_cycle
+    from main import run_posting_cycle
     send_message(chat_id, "Starting a posting cycle now...")
     result = run_posting_cycle(manual=True)
     send_message(chat_id, f"Done.\n{result}")
