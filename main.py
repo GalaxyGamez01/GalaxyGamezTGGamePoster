@@ -6,8 +6,8 @@ BUG FIX vs old version:
   - OLD: random.shuffle(unposted)[:3]  -> random order, 3 at a time,
          and a post was only marked "posted" if ALL channels succeeded,
          so one failed channel caused a full repeat to everyone.
-  - NEW: strict feed order (oldest -> newest), ONE post per channel per
-         cycle, and "posted" is tracked PER CHANNEL, so a single failed
+  - NEW: strict feed order (oldest -> newest), 3 unique posts per channel
+         per cycle, and "posted" is tracked PER CHANNEL, so a single failed
          channel never causes a repeat on channels that already got it.
 """
 
@@ -103,18 +103,19 @@ def run_posting_cycle(manual=False):
             entries = feed_cache[feed_url]
 
             posted_links = ch.setdefault("posted", [])
-            entry = next_unposted(entries, posted_links)
-
-            if entry is None:
-                # Feed fully exhausted for this channel - loop back to start
-                posted_links.clear()
-                entry = next_unposted(entries, posted_links)
-
-            if entry is None:
-                results.append(f"{ch['channel_id']}: no posts in feed")
-                continue
 
             for _ in range(POSTS_PER_CYCLE):
+                entry = next_unposted(entries, posted_links)
+
+                if entry is None:
+                    # Feed fully exhausted for this channel - loop back to start
+                    posted_links.clear()
+                    entry = next_unposted(entries, posted_links)
+
+                if entry is None:
+                    results.append(f"{ch['channel_id']}: no posts in feed")
+                    break
+
                 image_url = extract_image(entry)
                 caption = build_caption(entry)
                 success, message, _msg_id = send_with_retry(ch["channel_id"], image_url, caption)
@@ -127,9 +128,9 @@ def run_posting_cycle(manual=False):
                 else:
                     stats["failed"] = stats.get("failed", 0) + 1
                     results.append(f"{ch['channel_id']}: FAILED - {message}")
+                    break  # stop this channel's batch on failure, don't force through retries endlessly
 
                 time.sleep(DELAY_BETWEEN_CHANNELS)
-                break  # POSTS_PER_CYCLE is 1; loop kept for future flexibility
 
     save_users(users)
     save_stats(stats)
