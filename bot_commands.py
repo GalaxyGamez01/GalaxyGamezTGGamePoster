@@ -565,6 +565,9 @@ def main():
     users = load_users()
     users = ensure_default_admin(users)
 
+    # Make sure broadcasts.json always exists so the workflow's git add never fails
+    save_broadcasts(load_broadcasts())
+
     updates = get_updates(offset)
     if updates:
         for update in updates:
