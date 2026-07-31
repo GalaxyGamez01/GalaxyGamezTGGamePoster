@@ -66,5 +66,15 @@
         ]
       }
     ]
+  },
+  "8132925956": {
+    "is_admin": false,
+    "banned": false,
+    "strikes": 0,
+    "onboarding": {
+      "step": null,
+      "pending_channel_id": null
+    },
+    "channels": []
   }
 }
