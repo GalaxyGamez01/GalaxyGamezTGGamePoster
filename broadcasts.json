@@ -4,34 +4,34 @@
     "user_id": "__admin__",
     "message_id": 107745,
     "sent_at": "2026-08-02T07:53:27.375576",
-    "checked": false
+    "checked": true
   },
   {
     "channel_id": -1002392805703,
     "user_id": "__admin__",
     "message_id": 2872,
     "sent_at": "2026-08-02T07:53:28.442740",
-    "checked": false
+    "checked": true
   },
   {
     "channel_id": -1002685110307,
     "user_id": "__admin__",
     "message_id": 2846,
     "sent_at": "2026-08-02T07:53:28.973055",
-    "checked": false
+    "checked": true
   },
   {
     "channel_id": -1002353908594,
     "user_id": "__admin__",
     "message_id": 650,
     "sent_at": "2026-08-02T07:53:29.553302",
-    "checked": false
+    "checked": true
   },
   {
     "channel_id": -1002721819829,
     "user_id": "__admin__",
     "message_id": 485,
     "sent_at": "2026-08-02T07:53:30.188120",
-    "checked": false
+    "checked": true
   }
 ]

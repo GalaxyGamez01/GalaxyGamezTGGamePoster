@@ -2,30 +2,12 @@
   "__admin__": {
     "is_admin": true,
     "banned": false,
-    "strikes": 0,
+    "strikes": 1,
     "onboarding": {
       "step": null,
       "pending_channel_id": null
     },
     "channels": [
-      {
-        "channel_id": -1002328517911,
-        "title": "Galaxy Gamez",
-        "blog_feed_url": "https://galaxygamez01.blogspot.com/feeds/posts/default?max-results=500",
-        "paused": false,
-        "posted": [
-          "https://galaxygamez01.blogspot.com/2025/06/wwe-2k25-ultimate-ppsspp-edition.html",
-          "https://galaxygamez01.blogspot.com/2025/06/gta-5-free-download-for-pc-android-2025.html",
-          "https://galaxygamez01.blogspot.com/2025/06/tekken-8-ppsspp-iso-file-best-fighting.html",
-          "https://galaxygamez01.blogspot.com/2025/06/ea-sports-fc-2025-ppsspp-iso-texture.html",
-          "https://galaxygamez01.blogspot.com/2025/06/nba-2k25-ppsspp-best-basketball-game.html",
-          "https://galaxygamez01.blogspot.com/2025/06/5-ppsspp-iso-download-best-mma-fighting.html",
-          "https://galaxygamez01.blogspot.com/2025/06/zarchiver-best-file-manager-for-android.html",
-          "https://galaxygamez01.blogspot.com/2025/06/download-efootball-pes-2025-ppsspp-iso.html",
-          "https://galaxygamez01.blogspot.com/2025/06/gta-san-andreas-mobile-mod-menu-apk.html",
-          "https://galaxygamez01.blogspot.com/2025/07/efootball-pes-2026-ppsspp-download.html"
-        ]
-      },
       {
         "channel_id": -1001959406158,
         "title": "Galaxy Gamez",
